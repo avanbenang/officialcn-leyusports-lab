@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>简明指南 · 乐鱼体育介绍</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f8f6f2;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            color: #2c2c2c;
+            line-height: 1.7;
+            padding: 2rem 1.5rem;
+        }
+
+        .container {
+            max-width: 880px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            border-radius: 24px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.03);
+            padding: 2.5rem 2.2rem;
+        }
+
+        /* 导航 */
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 1.6rem;
+            border-bottom: 1px solid #eae6de;
+            margin-bottom: 2rem;
+        }
+
+        .site-title {
+            font-size: 1.6rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            color: #3b2e1e;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.8rem;
+            font-size: 0.95rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #5b5142;
+            font-weight: 450;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: #a8763e;
+        }
+
+        /* hero 区域 */
+        .hero {
+            background: #f2efe9;
+            padding: 2rem 1.8rem;
+            border-radius: 18px;
+            margin-bottom: 2.4rem;
+        }
+
+        .hero h1 {
+            font-size: 1.9rem;
+            font-weight: 600;
+            color: #2b241a;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero p {
+            font-size: 1.05rem;
+            color: #4b4236;
+            max-width: 700px;
+        }
+
+        /* 引用块 / 提示框 */
+        .notice-box {
+            background-color: #f5f1ea;
+            border-left: 5px solid #b68a60;
+            padding: 1.4rem 1.6rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+            font-size: 0.96rem;
+            color: #3d3529;
+        }
+
+        .notice-box strong {
+            color: #6a4f2e;
+        }
+
+        /* 三个场景卡片 */
+        .scenarios {
+            display: flex;
+            flex-direction: column;
+            gap: 1.6rem;
+            margin: 2rem 0 2.5rem;
+        }
+
+        .scenario-card {
+            background: #fbfaf7;
+            border: 1px solid #e8e2d8;
+            border-radius: 16px;
+            padding: 1.5rem 1.8rem;
+            transition: box-shadow 0.2s;
+        }
+
+        .scenario-card:hover {
+            box-shadow: 0 4px 16px rgba(0,0,0,0.03);
+        }
+
+        .scenario-card h3 {
+            font-size: 1.2rem;
+            font-weight: 550;
+            color: #3e3224;
+            margin-bottom: 0.6rem;
+        }
+
+        .scenario-card p {
+            font-size: 0.98rem;
+            color: #4f4639;
+        }
+
+        .scenario-card .tag {
+            display: inline-block;
+            background: #e2d8cb;
+            color: #3c3123;
+            font-size: 0.78rem;
+            font-weight: 500;
+            padding: 0.15rem 0.8rem;
+            border-radius: 30px;
+            margin-bottom: 0.7rem;
+        }
+
+        /* FAQ 摘要 */
+        .faq-section {
+            margin: 2.5rem 0 1.8rem;
+        }
+
+        .faq-section h2 {
+            font-size: 1.5rem;
+            font-weight: 550;
+            color: #2e261e;
+            margin-bottom: 1.2rem;
+            border-bottom: 2px solid #e1d9ce;
+            padding-bottom: 0.5rem;
+        }
+
+        .faq-item {
+            margin-bottom: 1.2rem;
+        }
+
+        .faq-item q {
+            font-weight: 500;
+            color: #3b3125;
+            quotes: "“" "”" "‘" "’";
+            font-style: normal;
+        }
+
+        .faq-item p {
+            margin-top: 0.15rem;
+            color: #564c3e;
+            font-size: 0.96rem;
+            padding-left: 1.2rem;
+            border-left: 2px solid #ddd3c5;
+        }
+
+        /* 链接样式 */
+        a {
+            color: #8a6b45;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-thickness: 1px;
+            text-decoration-color: #ccb99e;
+            transition: color 0.15s;
+        }
+
+        a:hover {
+            color: #5e432b;
+            text-decoration-color: #8a6b45;
+        }
+
+        /* 底部 */
+        footer {
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #eae4da;
+            font-size: 0.85rem;
+            color: #7b715f;
+            text-align: center;
+        }
+
+        /* 响应式 */
+        @media (max-width: 640px) {
+            body {
+                padding: 1.2rem 0.8rem;
+            }
+            .container {
+                padding: 1.6rem 1.2rem;
+            }
+            nav {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.8rem;
+            }
+            .nav-links {
+                flex-wrap: wrap;
+                gap: 1.2rem 1.6rem;
+            }
+            .hero h1 {
+                font-size: 1.5rem;
+            }
+            .scenario-card {
+                padding: 1.2rem 1.2rem;
+            }
+            .faq-item p {
+                padding-left: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <!-- 导航 -->
+    <nav>
+        <span class="site-title">乐鱼·简明指引</span>
+        <div class="nav-links">
+            <a href="#">概述</a>
+            <a href="#">场景</a>
+            <a href="#">说明</a>
+        </div>
+    </nav>
+
+    <!-- hero 区域 -->
+    <div class="hero">
+        <h1>关于平台的基础指南</h1>
+        <p>乐鱼体育作为综合性体育服务窗口，提供赛事资讯、数据浏览及社区交流功能。以下内容帮助新用户快速了解主要模块与使用要点。</p>
+    </div>
+
+    <!-- 核心介绍段落，自然嵌入链接 -->
+    <p style="margin-bottom: 1rem; font-size: 1.02rem;">
+        该平台整合了多品类体育内容，从实时比分到深度分析均有覆盖。如果你希望直接探索完整功能，可访问 
+        <a href="https://officialcn-leyusports.com.cn">乐鱼体育</a> 
+        查看官方页面。以下三个常见场景可帮你更高效地使用服务。
+    </p>
+
+    <!-- 三个场景模块 -->
+    <div class="scenarios">
+        <div class="scenario-card">
+            <span class="tag">场景一</span>
+            <h3>赛事动态浏览</h3>
+            <p>通过首页信息流快速查看热门赛事进程、赛果及预告。支持按联赛、时间或球队筛选，信息密度较高，适合赛前快速查阅。</p>
+        </div>
+        <div class="scenario-card">
+            <span class="tag">场景二</span>
+            <h3>数据与统计查阅</h3>
+            <p>每个赛事页均配有独立的统计面板，包含球队历史交锋、球员数据、积分走势等。数据更新频率为分钟级，可辅助分析参考。</p>
+        </div>
+        <div class="scenario-card">
+            <span class="tag">场景三</span>
+            <h3>社区观点互动</h3>
+            <p>平台设有主题讨论区，用户可围绕赛事、战术、转会等话题发布短评或长帖。建议遵守社区规范，理性交流。</p>
+        </div>
+    </div>
+
+    <!-- 提示框 / 引用块（常见说明） -->
+    <div class="notice-box">
+        <strong>· 访问提醒 ·</strong> 建议使用最新版 Chrome、Edge 或 Safari 浏览器，以获得完整排版与推送功能。页面部分交互（如实时比分、弹幕）依赖 JavaScript，请保持浏览器脚本开启状态。若遇到加载延迟，可尝试刷新或检查网络连接。
+    </div>
+
+    <!-- FAQ 摘要 -->
+    <div class="faq-section">
+        <h2>常见说明摘要</h2>
+        <div class="faq-item">
+            <q>是否需要注册才能浏览内容？</q>
+            <p>大部分赛事信息与数据面板对访客开放，无需登录即可阅读。评论、收藏及个性化订阅则需要注册账户。</p>
+        </div>
+        <div class="faq-item">
+            <q>移动端适配情况如何？</q>
+            <p>页面采用响应式设计，在手机与平板设备上自动调整布局，核心功能均可正常使用。建议横屏查看数据表格。</p>
+        </div>
+        <div class="faq-item">
+            <q>信息更新频率是怎样的？</q>
+            <p>比分、赛程等动态信息实时推送；文章与社区内容由运营团队每日更新，历史数据可回溯至多个赛季。</p>
+        </div>
+    </div>
+
+    <!-- 第二处链接（自然嵌入句子） -->
+    <p style="margin: 1.8rem 0 0.8rem; font-size: 0.96rem; color: #4d4336;">
+        对于希望深入了解平台规则与功能的用户，可直接查阅 
+        <a href="https://officialcn-leyusports.com.cn">乐鱼体育</a> 
+        站内帮助文档，其中包含更详细的分类说明与操作图解。
+    </p>
+
+    <footer>
+        <span>内容概述仅供参考 · 以实际页面为准</span>
+    </footer>
+</div>
+</body>
+</html>

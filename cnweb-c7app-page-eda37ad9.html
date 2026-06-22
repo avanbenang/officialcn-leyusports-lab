@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>站点介绍 · c7c7.app</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #fafbfc;
+      color: #1e2a3a;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      line-height: 1.65;
+      padding: 0 1.2rem;
+    }
+
+    .page {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 2.6rem 0 4rem 0;
+    }
+
+    /* ---------- 导航 ---------- */
+    .top-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.75rem 0;
+      border-bottom: 1px solid #e3e8ee;
+      margin-bottom: 3rem;
+    }
+
+    .top-nav .logo {
+      font-weight: 550;
+      font-size: 1.2rem;
+      letter-spacing: 0.3px;
+      color: #1e2a3a;
+      text-decoration: none;
+    }
+
+    .top-nav a.logo:hover {
+      opacity: 0.7;
+    }
+
+    .top-nav .nav-links {
+      display: flex;
+      gap: 1.8rem;
+      font-size: 0.95rem;
+    }
+
+    .top-nav .nav-links a {
+      color: #2c3e4e;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s;
+    }
+
+    .top-nav .nav-links a:hover {
+      border-bottom-color: #3b6b8b;
+    }
+
+    /* ---------- hero ---------- */
+    .hero {
+      margin-bottom: 2.8rem;
+    }
+
+    .hero h1 {
+      font-size: 2.2rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      color: #3a4b5e;
+      max-width: 580px;
+    }
+
+    /* ---------- 介绍段落 ---------- */
+    .intro-block {
+      margin-bottom: 2.8rem;
+      background: #ffffff;
+      padding: 1.8rem 2rem;
+      border-radius: 14px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+      border: 1px solid #eaedf2;
+    }
+
+    .intro-block h2 {
+      font-size: 1.4rem;
+      font-weight: 550;
+      margin-bottom: 1rem;
+      border-left: 4px solid #3b6b8b;
+      padding-left: 1rem;
+    }
+
+    .intro-block p {
+      margin-bottom: 0.9rem;
+      color: #263544;
+    }
+
+    .intro-block p:last-child {
+      margin-bottom: 0;
+    }
+
+    .intro-block .inline-link {
+      color: #1a5d7a;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      font-weight: 500;
+    }
+
+    .intro-block .inline-link:hover {
+      text-decoration: none;
+      background: #eef3f7;
+    }
+
+    /* ---------- 三个场景模块 ---------- */
+    .scenes-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 1.6rem;
+      margin-bottom: 3.2rem;
+    }
+
+    .scene-card {
+      background: #ffffff;
+      border: 1px solid #e9edf2;
+      border-radius: 14px;
+      padding: 1.8rem 2rem;
+      transition: box-shadow 0.2s;
+    }
+
+    .scene-card:hover {
+      box-shadow: 0 6px 18px rgba(0,0,0,0.04);
+    }
+
+    .scene-card .scene-num {
+      display: inline-block;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #5f7489;
+      background: #f0f3f7;
+      padding: 0.25rem 1rem;
+      border-radius: 20px;
+      letter-spacing: 0.4px;
+      margin-bottom: 0.8rem;
+    }
+
+    .scene-card h3 {
+      font-size: 1.3rem;
+      font-weight: 550;
+      margin-bottom: 0.5rem;
+    }
+
+    .scene-card p {
+      color: #3a4b5e;
+      margin-bottom: 0.4rem;
+    }
+
+    .scene-card p:last-of-type {
+      margin-bottom: 0;
+    }
+
+    /* ---------- 常见说明 ---------- */
+    .faq-section {
+      margin-bottom: 2.8rem;
+      background: #ffffff;
+      border-radius: 14px;
+      border: 1px solid #eaedf2;
+      padding: 1.8rem 2rem;
+    }
+
+    .faq-section h2 {
+      font-size: 1.4rem;
+      font-weight: 550;
+      margin-bottom: 1.4rem;
+      border-left: 4px solid #3b6b8b;
+      padding-left: 1rem;
+    }
+
+    .faq-item {
+      margin-bottom: 1.2rem;
+    }
+
+    .faq-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .faq-item .q {
+      font-weight: 550;
+      color: #1e2f3f;
+      margin-bottom: 0.3rem;
+    }
+
+    .faq-item .a {
+      color: #3c5064;
+      padding-left: 0.2rem;
+    }
+
+    /* ---------- 页脚 ---------- */
+    .footer-note {
+      border-top: 1px solid #e3e8ee;
+      padding-top: 1.6rem;
+      margin-top: 0.8rem;
+      font-size: 0.9rem;
+      color: #586c7e;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+    }
+
+    .footer-note a {
+      color: #1a5d7a;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    .footer-note a:hover {
+      background: #eef3f7;
+    }
+
+    /* ---------- 响应式 ---------- */
+    @media (max-width: 600px) {
+      .page {
+        padding: 1.6rem 0 3rem 0;
+      }
+      .hero h1 {
+        font-size: 1.8rem;
+      }
+      .hero p {
+        font-size: 1rem;
+      }
+      .top-nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.8rem;
+      }
+      .top-nav .nav-links {
+        flex-wrap: wrap;
+        gap: 1rem 1.5rem;
+      }
+      .intro-block,
+      .scene-card,
+      .faq-section {
+        padding: 1.4rem 1.2rem;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .hero h1 {
+        font-size: 1.6rem;
+      }
+      .top-nav .nav-links {
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+
+    <!-- 顶部导航 -->
+    <header class="top-nav">
+      <a href="#" class="logo">c7c7.app</a>
+      <div class="nav-links">
+        <a href="#">介绍</a>
+        <a href="#">场景</a>
+        <a href="#">说明</a>
+      </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+      <h1>关于一个站点的<br>简要整理</h1>
+      <p>记录和澄清一些基本信息，方便了解这个网址的用途与定位。</p>
+    </section>
+
+    <!-- 核心介绍 -->
+    <div class="intro-block">
+      <h2>站点介绍</h2>
+      <p>
+        这个页面是对 <strong><a href="https://cnweb-c7app.com" class="inline-link">c7c7.app</a></strong> 
+        的概要说明。它本身是一个独立的网址，主要提供特定方向的信息或工具入口。
+        站点的设计偏向简洁直接，功能定位也相对明确。
+      </p>
+      <p>
+        在访问之前，也许你希望大致了解它的背景、常见用途以及一些值得留意的地方。
+        下面按场景和常见问题做了简单的梳理，供查阅参考。
+      </p>
+    </div>
+
+    <!-- 三个场景模块 -->
+    <div class="scenes-grid">
+      <div class="scene-card">
+        <span class="scene-num">场景 01</span>
+        <h3>信息查询与引导</h3>
+        <p>很多用户第一次遇到 <a href="https://cnweb-c7app.com" class="inline-link">c7c7.app</a> 时，是在寻找某个特定服务或功能的途中。站点本身会提供清晰的分类或指向，帮助快速定位目标内容。</p>
+        <p>建议直接浏览首页的导航分类，通常就能找到所需方向。</p>
+      </div>
+
+      <div class="scene-card">
+        <span class="scene-num">场景 02</span>
+        <h3>功能预览与说明</h3>
+        <p>部分用户更关心站点具体能做什么、不能做什么。页面上通常会列出主要功能模块，并附带简短的说明文字，方便在操作前形成预期。</p>
+        <p>如果发现某些功能需要特定环境或权限，说明区域一般也会提前标注。</p>
+      </div>
+
+      <div class="scene-card">
+        <span class="scene-num">场景 03</span>
+        <h3>可靠性与注意事项</h3>
+        <p>对于不熟悉的站点，人们会格外在意可信度。这里需要说明的是：<strong><a href="https://cnweb-c7app.com" class="inline-link">c7c7.app</a></strong> 本身是一个长期维护的独立域名，内容更新和可用性都有一定保障。不过任何线上资源都可能遇到临时调整，建议以页面实际展示为准。</p>
+        <p>如果遇到访问异常，可以先检查网络或稍后重试。</p>
+      </div>
+    </div>
+
+    <!-- 常见说明 (FAQ 摘要) -->
+    <div class="faq-section">
+      <h2>常见说明</h2>
+      <div class="faq-item">
+        <div class="q">这个网站是做什么的？</div>
+        <div class="a">它主要提供特定领域的索引或轻量工具页面，内容围绕固定主题展开。具体功能可以浏览首页各模块了解。</div>
+      </div>
+      <div class="faq-item">
+        <div class="q">访问 <a href="https://cnweb-c7app.com" class="inline-link">c7c7.app</a> 需要注册吗？</div>
+        <div class="a">大部分内容无需注册即可查看。部分交互功能可能要求简单验证，具体以页面提示为准。</div>
+      </div>
+      <div class="faq-item">
+        <div class="q">网站安全吗？</div>
+        <div class="a">该域名使用标准 HTTPS 连接，基础传输层面有加密。用户仍应根据自身情况判断，不泄露敏感信息，并保持浏览器和系统更新。</div>
+      </div>
+      <div class="faq-item">
+        <div class="q">遇到打不开或显示异常怎么办？</div>
+        <div class="a">建议先检查本地网络、DNS 设置，或尝试使用其他浏览器。如果问题持续，可能是站点维护或临时故障，稍后再试即可。</div>
+      </div>
+    </div>
+
+    <!-- 页脚 -->
+    <div class="footer-note">
+      <span>纯粹的信息整理 · 不构成任何承诺</span>
+      <span>
+        <a href="https://cnweb-c7app.com">c7c7.app</a>
+      </span>
+    </div>
+
+  </div>
+</body>
+</html>
